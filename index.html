@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> <title>Pong</title> 
+<style> 
+</style>
+<script type="text/javascript" src="phaser.min.js"></script>
+</head> 
+<body> 
+ <script type="text/javascript"> 
+
+var game = new Phaser.Game(480, 800, Phaser.AUTO, 'phaser-example', { 
+preload: preload, create: create}); 
+function preload(){
+game.load.image('bola','ball.png');
+game.load.image('bg','sky.png');
+}
+function create(){
+	var b=game.add.sprite(0,0,'bg');
+	b.scale.setTo(3,3);
+var g=game.add.sprite(0,0,'bola');
+game.physics.arcade.enable(g);
+g.body.velocity.y=100;
+}
+</script>
+</body>
+</html>
